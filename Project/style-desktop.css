@@ -9,7 +9,7 @@
     border: none;
 }
 
-body {
+.background-color {
     background-color: #FAF4F2;
 }
 
@@ -35,7 +35,7 @@ section {
 }
 
 /*--------------------------Logo--------------------------*/
-.logo {
+header {
     background-color: #FAF4F2;
     color: #F9F9F9;
     font-size: 18px;
@@ -109,6 +109,7 @@ section {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    cursor: pointer;
 }
 
 .biography .button__download-cv {
@@ -121,6 +122,12 @@ section {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    cursor: pointer;
+    transition: 1s;
+}
+.biography .button__download-cv:hover{
+    background-color: #FF2950;
+    color: #F9F9F9;
 }
 
 /*--------------------------Completed projects------------------------*/
@@ -399,11 +406,12 @@ section {
     margin: 0 0 5px 12px;
 }
 
-.price-plans__card .list {
+.price-plans__card .plan-benefits {
     margin-left: 48px;
+
 }
 
-.price-plans__card .list ul {
+.price-plans__card .plan-benefits ul {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -411,15 +419,20 @@ section {
     gap: 16px;
 }
 
-.price-plans__card .list li {
+.price-plans__card .plan-benefits li {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 16px;
 }
 
-.price-plans__card .plan-benefits__silver li:nth-child(1)::before,
-.price-plans__card .plan-benefits__silver li:nth-child(2)::before {
+.plan-benefits.silver li:nth-child(1)::before,
+.silver li:nth-child(2)::before,
+.gold li:nth-child(1)::before,
+.gold li:nth-child(2)::before,
+.gold li:nth-child(3)::before,
+.gold li:nth-child(4)::before,
+.dimond li::before{
     content: "";
     display: flex;
     width: 24.885px;
@@ -430,7 +443,8 @@ section {
     background: url(./img/svg/Check.svg) no-repeat;
 }
 
-.price-plans__card .plan-benefits__silver li:nth-child(n+3)::before {
+.silver li:nth-child(n+3)::before,
+.gold li:nth-child(n+5)::before{
     content: "";
     display: flex;
     width: 24.885px;
@@ -442,46 +456,15 @@ section {
     background: url(./img/svg/Close.svg) no-repeat;
 }
 
-.price-plans__card .plan-benefits__gold li:nth-child(1)::before,
-.price-plans__card .plan-benefits__gold li:nth-child(2)::before,
-.price-plans__card .plan-benefits__gold li:nth-child(3)::before,
-.price-plans__card .plan-benefits__gold li:nth-child(4)::before {
-    content: "";
-    display: flex;
-    width: 24.885px;
-    height: 24px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    background: url(./img/svg/Check.svg) no-repeat;
-}
-
-.price-plans__card .plan-benefits__gold li:nth-child(n+5)::before {
-    content: "";
-    display: flex;
-    width: 24.885px;
-    height: 24px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    background: url(./img/svg/Close.svg) no-repeat;
-}
-
-.price-plans__card .plan-benefits__dimond li::before {
-    content: "";
-    display: flex;
-    width: 24.885px;
-    height: 24px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    background: url(./img/svg/Check.svg) no-repeat;
+.silver li:nth-child(n+3),
+.gold li:nth-child(n+5) {
+    opacity: 0.5;
 }
 
 .price-plans__card:hover {
     transition: 1.5s;
     transform: scale(1.05);
-    background-color: rgba(255, 155, 112, 0.68);
+    background-color: rgba(255, 155, 112, 0.95);
     color: #F9F9F9;
 
     & h4 {
@@ -535,6 +518,11 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 1s;
+}
+
+.button__email-me:hover{
+    color: #FF7315;
 }
 
 /*---------------------------Blog-------------------------*/
